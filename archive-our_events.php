@@ -24,8 +24,8 @@ get_header(); ?>
     'meta_query' => array(
       array(
         'key' => 'event_date',
-        //'compare' => '>=',
-        //'value' => $today,
+        'compare' => '>=',
+        'value' => $today,
         'type' => 'numeric'
       )
     )

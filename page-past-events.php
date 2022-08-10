@@ -1,5 +1,4 @@
 <?php
-/* Template Name: PastEvents */ 
 
 get_header(); ?>
 
@@ -19,14 +18,14 @@ get_header(); ?>
   $today = date('Ymd');
   $pastEvents = new WP_Query(array(
     'paged' => get_query_var('paged', 1),
-    'post_type' => 'event',
+    'post_type' => 'our_events',
     'meta_key' => 'event_date',
     'orderby' => 'meta_value_num',
     'order' => 'ASC',
     'meta_query' => array(
       array(
         'key' => 'event_date',
-        'compare' => '>=',
+        'compare' => '<',
         'value' => $today,
         'type' => 'numeric'
       )
