@@ -13,6 +13,9 @@ get_header(); ?>
 </div>
 
 <div class="container container--narrow page-section">
+  <form class="search" action="/" method="get" autocomplete="off">
+    <input type="text" name="s" placeholder="Search" id="keyword" class="input_search" data-page="1" onkeyup="">
+  </form>
 <?php 
    $today = date('Ymd');
   $homepageEvents = new WP_Query(array(
