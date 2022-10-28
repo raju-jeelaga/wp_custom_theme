@@ -33,8 +33,41 @@
           <div class="site-header__util">
             <a href="#" class="btn btn--small btn--orange float-left push-right">Login</a>
             <a href="#" class="btn btn--small btn--dark-orange float-left">Sign Up</a>
-            <span class="search-trigger js-search-trigger"><i class="fa fa-search" aria-hidden="true"></i></span>
+            <!-- <span class="search-trigger js-search-trigger">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </span> -->
+            <div class="search_bar">
+              <form action="/" method="get" autocomplete="off">
+                  <input type="text" name="s" placeholder="Search Code..." id="keyword" class="input_search" onkeyup="fetch()">
+                  <button>
+                      Search
+                  </button>
+              </form>
+              <div class="search_result" id="datafetch">
+                  <ul>
+                      <li>Please wait..</li>
+                  </ul>
+              </div>
           </div>
+          </div>
+          
         </div>
       </div>
     </header>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+    <script type="text/javascript">
+      jQuery("input#keyword").keyup(function() {
+      if (jQuery(this).val().length > 2) {
+        jQuery("#datafetch").show();
+      } else {
+        jQuery("#datafetch").hide();
+      }
+    });
+    </script>
+
+    <style type="text/css">
+      div.search_result {
+        display: none;
+      }
+    </style>
